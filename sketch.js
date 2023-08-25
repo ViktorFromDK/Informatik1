@@ -27,7 +27,7 @@ function draw() {
     }
   } else if (BallY==PlayerOneY) {
     if (BallX==PlayerOneX) {
-      xSpeed = -xSpeed;
+      xSpeed = -xSpeed; // Buggy - Wont turn the ball around
       ScoreOne += ScoreOne+1
       console.log(ScoreOne)
     }
