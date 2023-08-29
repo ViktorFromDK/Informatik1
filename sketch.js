@@ -62,7 +62,7 @@ function draw() {
     BallX = 0.5*windowWidth-10;
     BallY = 0.5*windowHeight;
     ScoreOne = ScoreOne+10
-    xSpeed = xSpeed+1
+    xSpeed = random(1,9)
   }
 
   if(BallX<0) {  
@@ -72,7 +72,7 @@ function draw() {
     BallX = 0.5*windowWidth-10;
     BallY = 0.5*windowHeight;
     ScoreTwo = ScoreTwo+10
-    xSpeed = xSpeed+1
+    xSpeed = random(-1,-9)
   }
 
   if(xSpeed>=10) {
@@ -87,13 +87,21 @@ function draw() {
 
 function keyPressed() {
   if (keyCode === UP_ARROW) {
-    PlayerOneY -= 45
+    if (PlayerOneY>0) {
+      PlayerOneY -= 45
+    }
   } else if (keyCode === DOWN_ARROW) {
-    PlayerOneY += 45
+    if (PlayerOneY+25<windowHeight) {
+      PlayerOneY += 45
+    }
   } else if (keyCode === LEFT_ARROW) {
-    PlayerTwoY -= 45
+    if (PlayerTwoY>0) {
+      PlayerTwoY -= 45
+    }
   } else if (keyCode === RIGHT_ARROW) {
-    PlayerTwoY += 45
+    if (PlayerTwoY+25<windowHeight) {
+      PlayerTwoY += 45
+    }
   }
 }
 
