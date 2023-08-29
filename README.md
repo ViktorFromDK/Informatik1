@@ -5,11 +5,9 @@ The goal is to create a "Pong" game playable with Makey Makey controllers.
 Features implemented:
 - Basic score system
 - Basic movement system
+- Advanced score system
+- Ball movement on Y axis
 
 Features to be implemented:
-- More advanced score system
-- Ball movement on Y axis
-- Game over screen
 
 Known bugs:
-- Player One do not make the ball bounch back
