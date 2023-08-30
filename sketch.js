@@ -55,7 +55,7 @@ function draw() {
         xSpeed = -xSpeed; // Reverses the speed of the ball for it to move in the opposit direction
         ySpeed = random(-7,7) // Randomly chooses a speed on the Y axis for the ball
         ScoreTwo = ScoreTwo+1 // Give Player Two a point
-        PlayerHit.play();
+        PlayerHit.play(); // Plays player hit sound
         console.log(ScoreTwo) // Prints Player Twos score in the console
       }
     }
@@ -64,12 +64,12 @@ function draw() {
         xSpeed = -xSpeed; // Reverses the speed of the ball for it to move in the opposit direction
         ySpeed = random(-7,7) // Randomly chooses a speed on the Y axis for the ball
         ScoreOne = ScoreOne+1 // Give Player One a point
-        PlayerHit.play();
+        PlayerHit.play(); // Plays player hit sound
         console.log(ScoreOne) // Prints Player Ones score in the console
       }
     }
-  } else {
-    textSize(32);
+  } else { // If the game hasent been started
+    textSize(32); // Defines the size of the text
     text('PRESS SHIFT TO START', 0.5*1536-187,825); // Displays the text if the game hasent been started
   }
 
@@ -78,7 +78,7 @@ function draw() {
 
   if (BallY<=0 || BallY>=864) { // Checks if the Ball touches the top or bottom
     ySpeed = -ySpeed // Reverses the balls speed on the Y axis
-    TopHit.play();
+    TopHit.play(); // Plays top hit sound
     console.log(ySpeed) // Prints the balls speed on the Y axis in the console
   }
 
@@ -90,7 +90,7 @@ function draw() {
     BallX = 0.5*1536-10; // Resets the ball to the middle position on the X axis
     BallY = 0.5*864; // Resets the ball to the middle position on the Y axis
     ScoreOne = ScoreOne+10 // Gives Player One ten points
-    SideHit.play();
+    SideHit.play(); // Plays side hit sound
     xSpeed = random(1,9) // Chooses a random speed between 1 and 9
   }
 
@@ -102,7 +102,7 @@ function draw() {
     BallX = 0.5*1536-10; // Resets the ball to the middle position on the X axis
     BallY = 0.5*864; // Resets the ball to the middle position on the Y axis
     ScoreTwo = ScoreTwo+10 // Gives Player Two ten points
-    SideHit.play();
+    SideHit.play(); // Plays side hit sound
     xSpeed = random(-1,-9) // Chooses a random speed between 1 and 9
   }
   
@@ -113,7 +113,7 @@ function draw() {
 }
 
 function keyPressed() {
-  if (Start == 0) {
+  if (Start == 0) { // Check if the game has been started
     if (keyCode===SHIFT) { // Check if Shift is pressed
       xSpeed = random(-4,4) // Randomly chooses a speed for the ball on the X axis
       Start = 1 // Tells the game that it is started
