@@ -56,7 +56,6 @@ function draw() {
         ySpeed = random(-7,7) // Randomly chooses a speed on the Y axis for the ball
         ScoreTwo = ScoreTwo+1 // Give Player Two a point
         PlayerHit.play(); // Plays player hit sound
-        console.log(ScoreTwo) // Prints Player Twos score in the console
       }
     }
     if (BallY>=PlayerOneY-0 && BallY<=PlayerOneY+50) { // Checks if the ball has hit Player Ones positon on the Y axis
@@ -65,7 +64,6 @@ function draw() {
         ySpeed = random(-7,7) // Randomly chooses a speed on the Y axis for the ball
         ScoreOne = ScoreOne+1 // Give Player One a point
         PlayerHit.play(); // Plays player hit sound
-        console.log(ScoreOne) // Prints Player Ones score in the console
       }
     }
   } else { // If the game hasent been started
@@ -79,14 +77,11 @@ function draw() {
   if (BallY<=0 || BallY>=864) { // Checks if the Ball touches the top or bottom
     ySpeed = -ySpeed // Reverses the balls speed on the Y axis
     TopHit.play(); // Plays top hit sound
-    console.log(ySpeed) // Prints the balls speed on the Y axis in the console
   }
 
   if(BallX>1536) { // Checks if the ball has hit the right side of the canvas
     xSpeed = 0 // Sets the ball speed on the X axis to 0
     ySpeed = 0 // Sets the ball speed on the Y axis to 0
-    console.log(xSpeed) // Prints the balls speed on the X axis in the console
-    console.log(ySpeed) // Prints the balls speed on the Y axis in the console
     BallX = 0.5*1536-10; // Resets the ball to the middle position on the X axis
     BallY = 0.5*864; // Resets the ball to the middle position on the Y axis
     ScoreOne = ScoreOne+10 // Gives Player One ten points
@@ -97,8 +92,6 @@ function draw() {
   if(BallX<0) { // Checks if the ball has hit the left side of the canvas
     xSpeed = 0 // Sets the ball speed on the X axis to 0
     ySpeed = 0 // Sets the ball speed on the Y axis to 0
-    console.log(xSpeed) // Prints the balls speed on the X axis in the console
-    console.log(ySpeed) // Prints the balls speed on the Y axis in the console
     BallX = 0.5*1536-10; // Resets the ball to the middle position on the X axis
     BallY = 0.5*864; // Resets the ball to the middle position on the Y axis
     ScoreTwo = ScoreTwo+10 // Gives Player Two ten points
