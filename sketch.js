@@ -70,7 +70,7 @@ function draw() {
     }
   } else {
     textSize(32);
-    text('PRESS SHIFT TO START', 0.5*1536-200,825); // Displays the text if the game hasent been started
+    text('PRESS SHIFT TO START', 0.5*1536-187,825); // Displays the text if the game hasent been started
   }
 
   rect(PlayerOneX,PlayerOneY,10,50,50); // Create Player One
@@ -107,7 +107,7 @@ function draw() {
   }
   
   textSize(32); // Defines the size of the text
-  text('SCORE', 0.5*1536-75,50); // Writes 'Score' in the top of the screen
+  text('SCORE', 0.5*1536-57,50); // Writes 'Score' in the top of the screen
   text(ScoreOne, PlayerOneX, 50); // Writes the score for Player One at the top of the screen
   text(ScoreTwo, PlayerTwoX, 50); // Writes the score for Player Two at the top of the screen
 }
