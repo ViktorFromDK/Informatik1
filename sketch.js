@@ -45,6 +45,21 @@ function setup() {
 function draw() { 
   image(background,0,0); // Loads the background everytime in order for other objects in the canvas not to be shown more than once
   fill(255); // Defines the color for objects
+  
+  if (ScoreOne>=100) {
+    xSpeed = 0
+    ySpeed = 0
+    BallX = 0.5*1536-10; // Resets the ball to the middle position on the X axis
+    BallY = 0.5*864; // Resets the ball to the middle position on the Y 
+    Start = 0
+  } else if (ScoreTwo>=100) {
+    xSpeed = 0
+    ySpeed = 0
+    BallX = 0.5*1536-10; // Resets the ball to the middle position on the X axis
+    BallY = 0.5*864; // Resets the ball to the middle position on the Y axis
+    Start = 0
+  }
+
   if (Start==1) { // Checks if the game has been started
     image(ball,BallX,BallY); // Creates the ball and define its position.
     BallX += xSpeed; // Makes the ball move on the X axis
@@ -98,7 +113,7 @@ function draw() {
     SideHit.play(); // Plays side hit sound
     xSpeed = random(-1,-9) // Chooses a random speed between 1 and 9
   }
-  
+
   textSize(32); // Defines the size of the text
   text('SCORE', 0.5*1536-57,50); // Writes 'Score' in the top of the screen
   text(ScoreOne, PlayerOneX, 50); // Writes the score for Player One at the top of the screen
@@ -108,6 +123,8 @@ function draw() {
 function keyPressed() {
   if (Start == 0) { // Check if the game has been started
     if (keyCode===SHIFT) { // Check if Shift is pressed
+      ScoreOne = 0
+      ScoreTwo = 0
       xSpeed = random(-4,4) // Randomly chooses a speed for the ball on the X axis
       Start = 1 // Tells the game that it is started
     } 
